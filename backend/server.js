@@ -25,7 +25,7 @@ app.use('/api/cars', carRoutes);
 app.use('/api/bookings', bookingRoutes);
 
 // start server
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 connectDb().then(() => {
   app.listen(port, () =>
