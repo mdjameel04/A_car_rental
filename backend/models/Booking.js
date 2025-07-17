@@ -13,7 +13,7 @@ const bookingSchema = new mongoose.Schema({
         ref: "Car",
         required: true
     },
-    starDate:{
+    startDate:{
         type: String,
         required: true,
     },
