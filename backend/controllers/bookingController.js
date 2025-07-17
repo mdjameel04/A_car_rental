@@ -15,7 +15,7 @@ import Car from '../models/Car.js';
      });
      await newBooking.save();
     /// optionally avalabilty 
-    await Car.findByIdAndUpdate(car, {availablr: false});
+    await Car.findByIdAndUpdate(car, {available: false});
     res.status(200).json(newBooking)
     } catch (error) {
         res.status(500).json({message: error.message})
@@ -26,7 +26,7 @@ import Car from '../models/Car.js';
 
  export const getUserBooking = async (req,res) => {
     try {
-        const bookings = await Booking.find({User: req.user.id}).populate("car")
+        const bookings = await Booking.find({user: req.user.id}).populate("car")
         res.status(200).json(bookings)
     } catch (error) {
              res.status(500).json({message: error.message})   
@@ -39,7 +39,7 @@ import Car from '../models/Car.js';
     try {
         const booking = await Booking.findByIdAndUpdate(
             req.params.id,
-            {status: "cancelled"},
+            {status: "cancelled"},   
             {new: true}
         );
         res.status(200).json(booking)
