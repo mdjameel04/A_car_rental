@@ -13,7 +13,7 @@ export const getcars = async (req,res)=>{
 
 export const getCarById = async (req,res) => {
     try {
-        const car = await car.findById(req.params.id);
+        const car = await Car.findById(req.params.id);
         if (!car) {
            return res.status(400).json({message : "car not found"})
         }
@@ -49,7 +49,7 @@ export const updateCar = async (req,res) => {
 export  const deleteCar = async (req,res) => {
     try {
         await Car.findByIdAndDelete(req.params.id);
-        res.status(200).json({message: { "this car was deleted succesfully"}})
+        res.status(200).json({message:  "this car was deleted succesfully"})
     } catch (error) {
         res.status(400).json({message: error.message})
     }
