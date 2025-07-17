@@ -1,6 +1,6 @@
 import Booking from '../models/Booking.js';
 import Car from '../models/Car.js';
-import User from '../models/User.js';
+
 
 // create booking 
  export const createBooking = async (req,res) => {
@@ -15,7 +15,7 @@ import User from '../models/User.js';
      });
      await newBooking.save();
     /// optionally avalabilty 
-    await Car.findIdAndUpdate(car, {availablr: false});
+    await Car.findByIdAndUpdate(car, {availablr: false});
     res.status(200).json(newBooking)
     } catch (error) {
         res.status(500).json({message: error.message})
@@ -39,7 +39,7 @@ import User from '../models/User.js';
     try {
         const booking = await Booking.findByIdAndUpdate(
             req.params.id,
-            {stauts: "cancelled"},
+            {status: "cancelled"},
             {new: true}
         );
         res.status(200).json(booking)

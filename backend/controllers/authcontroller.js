@@ -46,7 +46,7 @@ export const login = async (req,res) => {
      }
      // check password
      const token = jwt.sign(
-        {id:User._id, role: User.role},
+        {id:user._id, role: user.role},
         process.env.JWT_SCERET,
         {expiresIn: "7d"}
      );
