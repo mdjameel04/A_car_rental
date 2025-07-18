@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon server.js",
-    "dev" : "nodemon  server.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,10 +17,10 @@
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.16.3",
-    "moongose": "^1.0.0"
+    "mongoose": "^8.16.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
   }
 }
+
