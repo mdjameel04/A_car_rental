@@ -1,10 +1,13 @@
 import React from 'react'
+import Navbar from './Components/Navbar'
 
 const App = () => {
   return (
-    <div className='text-3xl font-bold text-center text-blue-600 mt-20'>
-      car project 🚗
-    </div>
+
+<div>
+<Navbar />
+</div>
+
   )
 }
 
